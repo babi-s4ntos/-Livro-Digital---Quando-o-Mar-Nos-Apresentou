@@ -65,11 +65,17 @@ body {
 ========================== */
 
 .page-cover {
-    background:
-        radial-gradient(ellipse at 30% 20%, #c0281a 0%, #8c1010 40%, #6a0a0a 70%, #3d0505 100%);
+    background-image:
+        linear-gradient(rgba(77, 20, 20, 0.575), rgba(100,0,0,0.4)),
+        url('img/capa.avif');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
     border-radius: 6px 10px 10px 6px;
+
     box-shadow:
         inset 2px 0 6px rgba(255,255,255,0.04),
         inset -2px 0 8px rgba(0,0,0,0.5),
@@ -77,19 +83,6 @@ body {
         -12px 4px 20px rgba(0,0,0,0.9),
         4px 4px 30px rgba(0,0,0,0.6);
 }
-
-/* Textura de couro real */
-.leather-texture {
-    position: absolute;
-    inset: 0;
-    background-image: url('https://www.transparenttextures.com/patterns/leather.png');
-    background-size: 220px;
-    background-repeat: repeat;
-    opacity: 0.55;
-    mix-blend-mode: soft-light;
-    pointer-events: none;
-}
-
 /* Lombada escura à esquerda */
 .page-cover::before {
     content: "";
@@ -165,23 +158,26 @@ body {
 /* Coração arabesco SVG (inline no HTML via background-image não é possível;
    usamos o SVG embutido no HTML em .cover-heart) */
 
-/* Título gravado no couro — estilo embossed */
 .main-title {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(1.6rem, 5vw, 2.4rem);
-    color: #5a0a0e;
+
+    color: #4a0a0a;
+
     text-align: center;
     line-height: 1.05;
+
     text-shadow:
-        -0.5px -0.5px 0 rgba(255,200,200,0.04),
-        1px 1.5px 2px rgba(0,0,0,0.7),
-        0 0 3px rgba(0,0,0,0.4);
-    -webkit-text-stroke: 0.3px #2a0204;
+        1px 1px 0 rgba(255,255,255,0.08),
+        -1px -1px 0 rgba(0,0,0,0.4),
+        2px 2px 4px rgba(0,0,0,0.5);
+
+    -webkit-text-stroke: 0.2px rgba(0,0,0,0.3);
+
     max-width: 90%;
     margin: 6px auto 0;
     letter-spacing: 0.5px;
 }
-
 /* Subtítulo oculto (não aparece na foto original) */
 .sub-title {
     display: none;
