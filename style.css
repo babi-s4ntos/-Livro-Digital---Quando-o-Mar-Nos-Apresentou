@@ -264,6 +264,14 @@ body {
     text-align:justify;
 }
 
+.page-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+
 .page-footer {
     font-size: 13.5px;
     text-align:center;
@@ -398,7 +406,7 @@ body {
 @media (max-width: 600px) {
     .main-title { font-size: 1.8rem; }
     .page-title { font-size: 1.5rem; }
-    .page-text { font-size: 0.9rem; }
+    .page-text { font-size: 8.8px; }
     .book-container { height: 75vh; }
 }
 
