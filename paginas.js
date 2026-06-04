@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
    function createPetal() {
     const petal = document.createElement('div');
 
-    const hearts = ['❤️', '💖', '💕', '💘', '💝'];
+    const hearts = ['🤍', '🖤'];
     petal.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
     petal.style.position = 'fixed';
