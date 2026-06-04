@@ -69,31 +69,36 @@ document.addEventListener('DOMContentLoaded', () => {
         progressBar.style.width = `${progress}%`;
     });
 
-    // 3. Efeito de Pétalas (Simples e Eficiente)
-    function createPetal() {
-        const petal = document.createElement('div');
-        petal.innerHTML = '🌸';
-        petal.style.position = 'fixed';
-        petal.style.top = '-20px';
-        petal.style.left = Math.random() * 100 + 'vw';
-        petal.style.fontSize = (Math.random() * 10 + 10) + 'px';
-        petal.style.opacity = Math.random();
-        petal.style.zIndex = '1';
-        petal.style.pointerEvents = 'none';
-        petal.style.transition = `transform ${Math.random() * 5 + 5}s linear, top ${Math.random() * 5 + 5}s linear`;
-        
-        document.body.appendChild(petal);
+   function createPetal() {
+    const petal = document.createElement('div');
 
-        setTimeout(() => {
-            petal.style.top = '110vh';
-            petal.style.transform = `translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg)`;
-        }, 100);
+    const hearts = ['❤️', '💖', '💕', '💘', '💝'];
+    petal.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
-        setTimeout(() => {
-            petal.remove();
-        }, 10000);
-    }
+    petal.style.position = 'fixed';
+    petal.style.top = '-20px';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.fontSize = (Math.random() * 12 + 14) + 'px';
+    petal.style.opacity = Math.random();
+    petal.style.zIndex = '1';
+    petal.style.pointerEvents = 'none';
+    petal.style.transition =
+        `transform ${Math.random() * 5 + 5}s linear,
+         top ${Math.random() * 5 + 5}s linear`;
 
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.style.top = '110vh';
+        petal.style.transform =
+            `translateX(${Math.random() * 100 - 50}px)
+             rotate(${Math.random() * 360}deg)`;
+    }, 100);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
     // Gerar pétalas periodicamente
     setInterval(createPetal, 500);
 
