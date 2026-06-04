@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Quando o Mar Nos Apresentou</title>
+    <!-- Fontes Românticas -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Container de Partículas/Pétalas -->
+    <div id="particles-js"></div>
+
+    <!-- Instrução Inicial -->
+    <div id="instruction-overlay" class="fade-out">
+        <p>Toque ou arraste as páginas para reviver nossa história ❤️</p>
+    </div>
+
+    <!-- Container do Livro -->
+    <div class="book-container">
+        <div id="book" class="flip-book">
+            
+            <!-- CAPA -->
+            <div class="page page-cover" data-density="hard">
+                <div class="cover-content">
+                    <div class="ornament-border"></div>
+                    <div class="leather-texture"></div>
+                    <div class="stitching"></div>
+
+                    <div class="gold-frame">
+                        <!-- Coração arabesco fiel à imagem -->
+                        <svg class="cover-heart-svg" viewBox="0 0 140 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Pétalas externas / pontas decorativas -->
+                            <g opacity="0.65" stroke="#3d0505" stroke-width="0.8">
+                                <line x1="70" y1="5" x2="70" y2="1"/>
+                                <line x1="90" y1="8" x2="93" y2="4"/>
+                                <line x1="107" y1="20" x2="111" y2="17"/>
+                                <line x1="116" y1="36" x2="121" y2="34"/>
+                                <line x1="50" y1="8" x2="47" y2="4"/>
+                                <line x1="33" y1="20" x2="29" y2="17"/>
+                                <line x1="24" y1="36" x2="19" y2="34"/>
+                                <ellipse cx="70" cy="3" rx="2" ry="3" fill="#3d0505" opacity="0.55"/>
+                                <ellipse cx="91" cy="6" rx="2" ry="3" fill="#3d0505" opacity="0.55" transform="rotate(30 91 6)"/>
+                                <ellipse cx="109" cy="18" rx="2" ry="3" fill="#3d0505" opacity="0.55" transform="rotate(60 109 18)"/>
+                                <ellipse cx="119" cy="35" rx="2" ry="3" fill="#3d0505" opacity="0.55" transform="rotate(80 119 35)"/>
+                                <ellipse cx="49" cy="6" rx="2" ry="3" fill="#3d0505" opacity="0.55" transform="rotate(-30 49 6)"/>
+                                <ellipse cx="31" cy="18" rx="2" ry="3" fill="#3d0505" opacity="0.55" transform="rotate(-60 31 18)"/>
+                                <ellipse cx="21" cy="35" rx="2" ry="3" fill="#3d0505" opacity="0.55" transform="rotate(-80 21 35)"/>
+                            </g>
+                            <!-- Contorno externo do coração -->
+                            <path d="M70 100 C40 80, 5 58, 5 35 C5 20, 18 10, 35 10 C47 10, 60 18, 70 28 C80 18, 93 10, 105 10 C122 10, 135 20, 135 35 C135 58, 100 80, 70 100 Z" fill="none" stroke="#3d0505" stroke-width="1.3" opacity="0.7"/>
+                            <!-- Contorno secundário interno -->
+                            <path d="M70 92 C44 74, 14 55, 14 35 C14 23, 24 15, 36 15 C48 15, 61 22, 70 31 C79 22, 92 15, 104 15 C116 15, 126 23, 126 35 C126 55, 96 74, 70 92 Z" fill="none" stroke="#3d0505" stroke-width="0.7" opacity="0.5"/>
+                            <!-- Arabescos lobo esquerdo -->
+                            <path d="M35 30 Q28 25, 22 30 Q16 38, 25 45 Q32 50, 40 45" fill="none" stroke="#3d0505" stroke-width="0.85" opacity="0.65"/>
+                            <path d="M30 38 Q25 33, 27 28" fill="none" stroke="#3d0505" stroke-width="0.6" opacity="0.5"/>
+                            <circle cx="25" cy="43" r="3" fill="none" stroke="#3d0505" stroke-width="0.7" opacity="0.5"/>
+                            <path d="M36 42 Q30 50, 36 56 Q42 62, 50 58" fill="none" stroke="#3d0505" stroke-width="0.85" opacity="0.65"/>
+                            <path d="M40 52 Q35 58, 38 64" fill="none" stroke="#3d0505" stroke-width="0.6" opacity="0.5"/>
+                            <!-- Arabescos lobo direito (espelho) -->
+                            <path d="M105 30 Q112 25, 118 30 Q124 38, 115 45 Q108 50, 100 45" fill="none" stroke="#3d0505" stroke-width="0.85" opacity="0.65"/>
+                            <path d="M110 38 Q115 33, 113 28" fill="none" stroke="#3d0505" stroke-width="0.6" opacity="0.5"/>
+                            <circle cx="115" cy="43" r="3" fill="none" stroke="#3d0505" stroke-width="0.7" opacity="0.5"/>
+                            <path d="M104 42 Q110 50, 104 56 Q98 62, 90 58" fill="none" stroke="#3d0505" stroke-width="0.85" opacity="0.65"/>
+                            <path d="M100 52 Q105 58, 102 64" fill="none" stroke="#3d0505" stroke-width="0.6" opacity="0.5"/>
+                            <!-- Haste central / folha -->
+                            <path d="M70 28 Q65 40, 58 52 Q52 64, 56 76 Q60 85, 70 90 Q80 85, 84 76 Q88 64, 82 52 Q75 40, 70 28 Z" fill="none" stroke="#3d0505" stroke-width="0.9" opacity="0.6"/>
+                            <!-- Espirais centrais -->
+                            <path d="M70 38 Q62 44, 60 52 Q60 60, 65 65 Q68 68, 70 67" fill="none" stroke="#3d0505" stroke-width="0.8" opacity="0.5"/>
+                            <path d="M70 38 Q78 44, 80 52 Q80 60, 75 65 Q72 68, 70 67" fill="none" stroke="#3d0505" stroke-width="0.8" opacity="0.5"/>
+                            <!-- Mini coração central -->
+                            <path d="M70 46 C68 43, 63 43, 63 47 C63 51, 70 55, 70 55 C70 55, 77 51, 77 47 C77 43, 72 43, 70 46 Z" fill="none" stroke="#3d0505" stroke-width="0.8" opacity="0.6"/>
+                            <!-- Mini corações laterais (como na foto) -->
+                            <path d="M55 38 C54 36, 51 36, 51 38.5 C51 41, 55 44, 55 44 C55 44, 59 41, 59 38.5 C59 36, 56 36, 55 38 Z" fill="#3d0505" opacity="0.45"/>
+                            <path d="M85 38 C84 36, 81 36, 81 38.5 C81 41, 85 44, 85 44 C85 44, 89 41, 89 38.5 C89 36, 86 36, 85 38 Z" fill="#3d0505" opacity="0.45"/>
+                            <!-- Pontos decorativos -->
+                            <circle cx="70" cy="16" r="1.5" fill="#3d0505" opacity="0.5"/>
+                            <circle cx="50" cy="22" r="1" fill="#3d0505" opacity="0.45"/>
+                            <circle cx="90" cy="22" r="1" fill="#3d0505" opacity="0.45"/>
+                        </svg>
+
+                        <h1 class="main-title">Quando o Mar<br>Nos Apresentou</h1>
+
+                        <!-- Ornamento inferior -->
+                        <svg class="cover-bottom-ornament" width="150" height="22" viewBox="0 0 150 22">
+                            <g stroke="#3d0505" stroke-width="0.8" fill="none" opacity="0.75">
+                                <line x1="5" y1="11" x2="50" y2="11"/>
+                                <line x1="100" y1="11" x2="145" y2="11"/>
+                                <path d="M50 11 Q55 5, 60 8 Q63 10, 60 13 Q55 16, 50 11"/>
+                                <path d="M100 11 Q95 5, 90 8 Q87 10, 90 13 Q95 16, 100 11"/>
+                                <path d="M75 8 C73 5.5, 69 5.5, 69 8.5 C69 12, 75 16, 75 16 C75 16, 81 12, 81 8.5 C81 5.5, 77 5.5, 75 8 Z" fill="#3d0505" opacity="0.5"/>
+                                <circle cx="6" cy="11" r="1.5" fill="#3d0505" opacity="0.5"/>
+                                <circle cx="144" cy="11" r="1.5" fill="#3d0505" opacity="0.5"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Fecho metálico dourado -->
+                    <div class="cover-clasp"></div>
+                </div>
+            </div>
+
+        <!-- PÁGINA 1: Introdução -->
+<div class="page page-inner">
+    <div class="page-content">
+        <h2 class="page-title">Capítulo I — O Verão Que Mudou Meu Destino</h2>
+
+        <p class="page-text">
+            Era uma vez, em um luminoso janeiro de 2024, quando as brisas quentes carregavam o perfume das férias de verão, uma jovem que embarcou em uma jornada sem imaginar que estava prestes a abrir as primeiras páginas da mais bela história de sua vida.
+        </p>
+
+        <p class="page-text">
+            Movida pela curiosidade e pelo desejo de conhecer suas raízes, ela partiu em direção a Pernambuco, um lugar onde o mar encontrava o horizonte em tons de azul infinito e onde histórias antigas pareciam sussurrar através do vento.
+        </p>
+
+        <p class="page-text">
+            Ali vivia a família de seu pai, pessoas que ela ainda não conhecia bem, mas que a aguardavam de braços abertos. Cada estrada percorrida parecia um caminho mágico desenhado por alguma fada invisível. As paisagens passavam diante de seus olhos como ilustrações de um grande livro encantado: coqueiros dançando suavemente ao vento, praias brilhando sob a luz do sol e o céu pintado com as cores mais belas que a natureza poderia criar.
+        </p>
+
+        <p class="page-text">
+            Ao chegar, foi recebida por sorrisos calorosos, abraços sinceros e histórias que atravessavam gerações. Era como descobrir um reino perdido que sempre fizera parte dela, mas que permanecera escondido até aquele momento.
+        </p>
+
+        <p class="page-text">
+            Os dias passavam devagar, embalados pelo canto dos pássaros. E enquanto aproveitava aquele verão mágico, sem perceber, o destino já escrevia silenciosamente as próximas linhas de sua história.
+        </p>
+
+        <p class="page-text">
+            Pois, em algum lugar daquelas terras iluminadas pelo sol pernambucano, um novo capítulo aguardava para começar.
+        </p>
+
+        <p class="page-text">
+            E assim, sem saber, a jovem virou a primeira página de uma aventura que transformaria para sempre seu coração...
+        </p>
+
+        <div class="page-footer">1</div>
+    </div>
+</div>
+
+            <!-- PÁGINA 2: Primeira Conversa -->
+            <div class="page page-inner">
+                <div class="page-content">
+                    <h2 class="page-title">Nossa Primeira Conversa</h2>
+                    <div class="polaroid-container">
+                        <div class="polaroid" style="transform: rotate(-2deg);">
+                            <img src="images/foto1.jpg" alt="Memória" loading="lazy">
+                            <span class="handwritten">Aquele primeiro "Oi"...</span>
+                        </div>
+                    </div>
+                    <div class="page-footer">2</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 3: Primeiro Encontro -->
+            <div class="page page-inner">
+                <div class="page-content">
+                    <h2 class="page-title">Nosso Primeiro Encontro</h2>
+                    <div class="polaroid-container dual">
+                        <div class="polaroid small" style="transform: rotate(3deg);">
+                            <img src="images/foto2.jpg" alt="Memória" loading="lazy">
+                            <span class="handwritten">Onde tudo brilhou</span>
+                        </div>
+                        <div class="polaroid small" style="transform: rotate(-3deg);">
+                            <img src="images/foto3.jpg" alt="Memória" loading="lazy">
+                            <span class="handwritten">Inesquecível</span>
+                        </div>
+                    </div>
+                    <div class="page-footer">3</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 4: Momentos Especiais -->
+            <div class="page page-inner">
+                <div class="page-content">
+                    <h2 class="page-title">Momentos Especiais</h2>
+                    <p class="page-text">São nos pequenos detalhes que o amor se esconde. O café da manhã, o abraço apertado após um dia longo, o silêncio confortável ao seu lado.</p>
+                    <div class="polaroid" style="transform: rotate(1deg);">
+                        <img src="images/foto4.jpg" alt="Memória" loading="lazy">
+                        <span class="handwritten">Nossa rotina linda</span>
+                    </div>
+                    <div class="page-footer">4</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 5: Viagens -->
+            <div class="page page-inner">
+                <div class="page-content">
+                    <h2 class="page-title">Viagens e Aventuras</h2>
+                    <div class="polaroid-container dual">
+                        <div class="polaroid small" style="transform: rotate(-4deg);">
+                            <img src="images/foto5.jpg" alt="Memória" loading="lazy">
+                            <span class="handwritten">Novos horizontes</span>
+                        </div>
+                        <div class="polaroid small" style="transform: rotate(2deg);">
+                            <img src="images/foto6.jpg" alt="Memória" loading="lazy">
+                            <span class="handwritten">Pelo mundo com você</span>
+                        </div>
+                    </div>
+                    <div class="page-footer">5</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 6: Superação -->
+            <div class="page page-inner">
+                <div class="page-content">
+                    <h2 class="page-title">Tudo Que Superamos</h2>
+                    <p class="page-text">Nem todos os dias foram fáceis, mas todos valeram a pena. Nossa união é o escudo que nos protege de qualquer tempestade. O "nós" é mais forte que tudo.</p>
+                    <div class="polaroid" style="transform: rotate(-1deg);">
+                        <img src="images/foto7.jpg" alt="Superação" loading="lazy">
+                        <span class="handwritten">Sempre juntos</span>
+                    </div>
+                    <div class="page-footer">6</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 7: Declaração -->
+            <div class="page page-inner special-page">
+                <div class="page-content">
+                    <h2 class="page-title">Minha Declaração</h2>
+                    <div class="ornament-gold"></div>
+                    <p class="page-text intense">Eu te amo não pelo que você é, mas pelo que eu sou quando estou com você. Você é meu porto seguro, meu sol e minha lua.</p>
+                    <div class="hearts-decorative">❤️❤️❤️</div>
+                    <div class="page-footer">7</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 8: Futuro -->
+            <div class="page page-inner">
+                <div class="page-content">
+                    <h2 class="page-title">Nosso Futuro</h2>
+                    <p class="page-text">O livro da nossa vida ainda tem muitas páginas em branco. Mal posso esperar para escrevê-las ao seu lado, dia após dia, para sempre.</p>
+                    <div class="page-footer">8</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA FINAL (BACK COVER) -->
+            <div class="page page-cover page-final" data-density="hard">
+                <div class="final-overlay">
+                    <h2 class="final-text">E foram felizes para sempre ❤️</h2>
+                    <div class="final-photo-frame">
+                        <img src="images/casal-final.jpg" class="final-photo" alt="Nós">
+                    </div>
+                    <div class="sparkles-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Musical -->
+    <div class="music-player">
+        <div class="player-card">
+            <span class="music-note">🎵</span>
+            <div class="music-info">
+                <span class="music-title">Minha Felicidade</span>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress"></div>
+                </div>
+            </div>
+            <button id="play-pause-btn" class="play-btn">▶</button>
+        </div>
+    </div>
+
+    <!-- Áudios -->
+    <audio id="bg-music" src="audio/minha-felicidade.mp3" loop></audio>
+    <audio id="flip-sound" src="audio/page-flip.mp3"></audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+    <script src="paginas.js"></script>
+</body>
+</html>

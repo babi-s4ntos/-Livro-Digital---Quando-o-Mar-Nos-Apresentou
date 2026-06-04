@@ -1,0 +1,405 @@
+:root {
+    --wine-dark: #2b0d0d;
+    --wine-medium: #5c1010;
+    --wine-light: #a02b2b;
+    --gold: #d4af37;
+    --gold-light: #f9e29c;
+    --ivory: #fdf5e6;
+    --paper: #f4ecd8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #7a0000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='440'%3E%3Cdefs%3E%3Cfilter id='b'%3E%3CfeGaussianBlur stdDeviation='1.2'/%3E%3C/filter%3E%3C!-- lábio realista como symbol --%3E%3Csymbol id='L' viewBox='0 0 200 95'%3E%3Cg filter='url(%23b)' opacity='0.55'%3E%3Cpath d='M10 48 C22 18,52 20,78 28 C88 31,95 36,100 36 C105 36,112 31,122 28 C148 20,178 18,190 48 C165 40,135 33,100 33 C65 33,35 40,10 48Z' fill='%233a0000'/%3E%3Cpath d='M10 48 C25 48,38 62,100 76 C162 62,175 48,190 48 C172 84,138 94,100 95 C62 94,28 84,10 48Z' fill='%233a0000'/%3E%3C/g%3E%3Cpath d='M10 48 C22 18,52 20,78 28 C88 31,95 36,100 36 C105 36,112 31,122 28 C148 20,178 18,190 48 C165 40,135 33,100 33 C65 33,35 40,10 48Z' fill='%235a0000'/%3E%3Cpath d='M10 48 C25 48,38 62,100 76 C162 62,175 48,190 48 C172 84,138 94,100 95 C62 94,28 84,10 48Z' fill='%235a0000'/%3E%3Cpath d='M10 48 C55 44,145 44,190 48' stroke='%232a0000' stroke-width='1.8' fill='none' opacity='0.8'/%3E%3Cpath d='M95 20 C97 28,100 34,100 36 C100 34,103 28,105 20' fill='none' stroke='%232a0000' stroke-width='1' opacity='0.5'/%3E%3Cpath d='M55 66 C72 72,128 72,145 66' stroke='%23800010' stroke-width='2.5' fill='none' opacity='0.25' stroke-linecap='round'/%3E%3C/symbol%3E%3C/defs%3E%3Crect width='340' height='440' fill='none'/%3E%3Cg transform='translate(30,25) rotate(-12)' opacity='0.72'%3E%3Cuse href='%23L' width='130' height='62'/%3E%3C/g%3E%3Cg transform='translate(185,15) rotate(8)' opacity='0.60'%3E%3Cuse href='%23L' width='120' height='57'/%3E%3C/g%3E%3Cg transform='translate(10,130) rotate(5)' opacity='0.68'%3E%3Cuse href='%23L' width='140' height='67'/%3E%3C/g%3E%3Cg transform='translate(190,115) rotate(-18)' opacity='0.65'%3E%3Cuse href='%23L' width='125' height='60'/%3E%3C/g%3E%3Cg transform='translate(270,160) rotate(6)' opacity='0.55'%3E%3Cuse href='%23L' width='115' height='55'/%3E%3C/g%3E%3Cg transform='translate(50,235) rotate(-6)' opacity='0.70'%3E%3Cuse href='%23L' width='145' height='69'/%3E%3C/g%3E%3Cg transform='translate(210,240) rotate(15)' opacity='0.62'%3E%3Cuse href='%23L' width='130' height='62'/%3E%3C/g%3E%3Cg transform='translate(130,170) rotate(-22)' opacity='0.50'%3E%3Cuse href='%23L' width='110' height='52'/%3E%3C/g%3E%3Cg transform='translate(20,350) rotate(10)' opacity='0.66'%3E%3Cuse href='%23L' width='138' height='66'/%3E%3C/g%3E%3Cg transform='translate(195,345) rotate(-8)' opacity='0.60'%3E%3Cuse href='%23L' width='128' height='61'/%3E%3C/g%3E%3Cg transform='translate(290,310) rotate(20)' opacity='0.52'%3E%3Cuse href='%23L' width='112' height='53'/%3E%3C/g%3E%3Cg transform='translate(110,390) rotate(-5)' opacity='0.58'%3E%3Cuse href='%23L' width='120' height='57'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 340px 440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Efeito de Pétalas Caindo */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Container do Livro */
+.book-container {
+    position: relative;
+    z-index: 2;
+    width: 90vw;
+    height: 80vh;
+    max-width: 500px;
+    max-height: 700px;
+    perspective: 2000px;
+}
+
+/* Estilização das Páginas */
+.page {
+    background-color: var(--paper);
+    padding: 20px;
+    box-shadow: inset 5px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   CAPA LIVRO ANTIGO — FIEL À FOTO
+========================== */
+
+.page-cover {
+    background:
+        radial-gradient(ellipse at 30% 20%, #c0281a 0%, #8c1010 40%, #6a0a0a 70%, #3d0505 100%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px 10px 10px 6px;
+    box-shadow:
+        inset 2px 0 6px rgba(255,255,255,0.04),
+        inset -2px 0 8px rgba(0,0,0,0.5),
+        -8px 0 0 #1a0202,
+        -12px 4px 20px rgba(0,0,0,0.9),
+        4px 4px 30px rgba(0,0,0,0.6);
+}
+
+/* Textura de couro real */
+.leather-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/leather.png');
+    background-size: 220px;
+    background-repeat: repeat;
+    opacity: 0.55;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+/* Lombada escura à esquerda */
+.page-cover::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 20px; height: 100%;
+    background: linear-gradient(to right, #1a0202, #3d0707, #5a0c0c);
+    box-shadow:
+        inset -2px 0 4px rgba(0,0,0,0.6),
+        2px 0 4px rgba(0,0,0,0.4);
+    z-index: 5;
+}
+
+/* Fecho (aba de couro) */
+.page-cover::after {
+    content: "";
+    position: absolute;
+    right: -2px; top: 50%;
+    transform: translateY(-50%);
+    width: 20px; height: 80px;
+    background: linear-gradient(135deg, #8c1010, #5a0808);
+    border-radius: 6px 0 0 6px;
+    box-shadow:
+        inset -1px 0 3px rgba(0,0,0,0.5),
+        1px 0 4px rgba(0,0,0,0.5);
+    z-index: 6;
+}
+
+.cover-content {
+    position: relative;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+}
+
+/* Moldura externa gravada */
+.ornament-border {
+    position: absolute;
+    top: 10px; left: 24px; right: 10px; bottom: 10px;
+    border: 1.5px solid rgba(80,10,10,0.8);
+    box-shadow:
+        inset 0 0 0 1px rgba(120,20,20,0.3),
+        0 0 0 1px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+/* Ornamentos florais na borda (SVG inline via background) */
+.ornament-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3C!-- flores topo --%3E%3Ccircle cx='10%25' cy='2%25' r='3' fill='%233d0505' opacity='0.5'/%3E%3Ccircle cx='30%25' cy='2%25' r='3' fill='%233d0505' opacity='0.5'/%3E%3Ccircle cx='50%25' cy='2%25' r='3' fill='%233d0505' opacity='0.5'/%3E%3Ccircle cx='70%25' cy='2%25' r='3' fill='%233d0505' opacity='0.5'/%3E%3Ccircle cx='90%25' cy='2%25' r='3' fill='%233d0505' opacity='0.5'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* Moldura interna + conteúdo centrado */
+.gold-frame {
+    position: absolute;
+    top: 28px; left: 38px; right: 28px; bottom: 28px;
+    border: 1px solid rgba(60,8,8,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 10px 16px;
+    border-radius: 2px;
+}
+
+/* Coração arabesco SVG (inline no HTML via background-image não é possível;
+   usamos o SVG embutido no HTML em .cover-heart) */
+
+/* Título gravado no couro — estilo embossed */
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: #5a0a0e;
+    text-align: center;
+    line-height: 1.05;
+    text-shadow:
+        -0.5px -0.5px 0 rgba(255,200,200,0.04),
+        1px 1.5px 2px rgba(0,0,0,0.7),
+        0 0 3px rgba(0,0,0,0.4);
+    -webkit-text-stroke: 0.3px #2a0204;
+    max-width: 90%;
+    margin: 6px auto 0;
+    letter-spacing: 0.5px;
+}
+
+/* Subtítulo oculto (não aparece na foto original) */
+.sub-title {
+    display: none;
+}
+
+/* Costura pontilhada na lombada */
+.stitching {
+    position: absolute;
+    left: 8px; top: 15px; bottom: 15px;
+    width: 3px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0, transparent 5px,
+        rgba(10,0,0,0.5) 5px, rgba(10,0,0,0.5) 10px
+    );
+    border-radius: 2px;
+    z-index: 7;
+}
+
+/* Fecho metálico dourado (badge sobre a aba) */
+.cover-clasp {
+    position: absolute;
+    right: -4px; top: 50%;
+    transform: translateY(-50%);
+    width: 30px; height: 30px;
+    background: radial-gradient(circle at 35% 35%, #d4a847, #a07820, #7a5510);
+    border-radius: 5px;
+    box-shadow:
+        inset 0 1px 2px rgba(255,220,100,0.4),
+        inset 0 -1px 2px rgba(0,0,0,0.5),
+        0 2px 6px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(100,70,20,0.5);
+    z-index: 10;
+}
+.cover-clasp::before {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px; height: 12px;
+    background: radial-gradient(circle at 40% 35%, #b8922a, #7a5510);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 1px 2px rgba(255,200,80,0.3),
+        0 1px 3px rgba(0,0,0,0.7),
+        0 0 0 2px rgba(80,50,10,0.5);
+}
+
+/* Coração arabesco no topo da capa */
+.cover-heart-svg {
+    width: 130px;
+    height: 108px;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+}
+
+/* Ornamento inferior (linha + coração pequeno) */
+.cover-bottom-ornament {
+    margin-top: 8px;
+    opacity: 0.75;
+}
+
+/* Páginas Internas */
+.page-inner {
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    background-color: var(--ivory);
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+.page-title {
+    font-family: 'Great Vibes', cursive;
+    color: var(--wine-medium);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #333;
+    text-align:justify;
+}
+
+.page-footer {
+    font-size: 13.5px;
+    text-align:center;
+}
+/* Polaroid Component */
+.polaroid {
+    background: white;
+    padding: 10px 10px 30px 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 85%;
+    margin: 15px auto;
+    transition: transform 0.3s;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(0.2);
+}
+
+.handwritten {
+    font-family: 'Great Vibes', cursive;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #444;
+    font-size: 1.2rem;
+}
+
+/* Player Musical */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 250px;
+}
+
+.player-card {
+    background: rgba(43, 13, 13, 0.9);
+    border: 1px solid var(--gold);
+    padding: 10px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-title {
+    color: var(--gold);
+    font-size: 0.8rem;
+    display: block;
+}
+
+.progress-container {
+    width: 100px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    margin-top: 4px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--gold);
+}
+
+.play-btn {
+    background: none;
+    border: none;
+    color: var(--gold);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Animação de Entrada Instrução */
+#instruction-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.fade-out {
+    animation: fadeOut 4s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Página Final */
+.page-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.final-text {
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.final-photo-frame {
+    border: 5px solid var(--gold);
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 20px var(--gold);
+}
+
+.final-photo {
+    width: 100%;
+    max-width: 250px;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 600px) {
+    .main-title { font-size: 1.8rem; }
+    .page-title { font-size: 1.5rem; }
+    .page-text { font-size: 0.9rem; }
+    .book-container { height: 75vh; }
+}
+
+
