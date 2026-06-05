@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Quando o Mar Nos Apresentou</title>
-    <!-- Fontes Românticas -->
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
     <!-- Container de Partículas/Pétalas -->
     <div id="particles-js"></div>
@@ -17,6 +18,16 @@
     <div id="instruction-overlay" class="fade-out">
         <p>Toque ou arraste as páginas para reviver nossa história ❤️</p>
     </div>
+
+    <div id="top-ui">
+
+    <button id="btn-prev" class="circle-btn">⬅</button>
+
+    <button id="btn-download" class="circle-btn">⬇</button>
+
+    <button id="btn-next" class="circle-btn">➡</button>
+
+</div>
 
     <!-- Container do Livro -->
     <div class="book-container">
@@ -253,25 +264,32 @@
     </div>
 
     <!-- Player Musical -->
+    
+    <!-- PLAYER MUSICAL VISUAL -->
     <div class="music-player">
         <div class="player-card">
             <span class="music-note">🎵</span>
+
             <div class="music-info">
                 <span class="music-title">Minha Felicidade</span>
                 <div class="progress-container">
                     <div class="progress-bar" id="progress"></div>
                 </div>
             </div>
+
             <button id="play-pause-btn" class="play-btn">▶</button>
         </div>
     </div>
 
-    <!-- Áudios -->
-    <audio id="bg-music" src="audio/minha-felicidade.mp3" loop></audio>
-    <audio id="flip-sound" src="audio/page-flip.mp3"></audio>
+       <div id="yt-wrapper">
+    <div id="yt-player"></div>
+</div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
-    <script src="paginas.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+
+<script src="music.js"></script>
+<script src="paginas.js"></script>
+
 </body>
 </html>
