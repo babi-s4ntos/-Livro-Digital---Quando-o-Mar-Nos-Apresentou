@@ -204,3 +204,45 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(createSparkle, 300);
 
 });
+
+const celular = document.querySelector('.mockup-celular');
+
+['click', 'touchstart', 'mousedown'].forEach(evento => {
+    celular.addEventListener(evento, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+celular.addEventListener('click', () => {
+    celular.classList.toggle('ativo');
+});
+const modal = document.getElementById("foto-modal");
+const modalImg = document.getElementById("modal-img");
+const modalDesc = document.getElementById("modal-desc");
+
+// ABRIR MODAL (bloqueia PageFlip antes dele receber o evento)
+document.querySelectorAll(".polaroid").forEach(polaroid => {
+
+    polaroid.addEventListener("pointerdown", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const img = polaroid.querySelector("img");
+        const desc = polaroid.querySelector(".descricao");
+
+        modalImg.src = img.src;
+        modalDesc.textContent = desc ? desc.textContent : "";
+
+        modal.classList.add("ativo");
+    }, true); // 👈 captura ANTES do PageFlip
+});
+
+
+// FECHAR MODAL (também bloqueia propagação)
+modal.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    modal.classList.remove("ativo");
+}, true);
